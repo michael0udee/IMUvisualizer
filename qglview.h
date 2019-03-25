@@ -3,9 +3,10 @@
 
 // www.amin-ahmadi.com
 
-#include <QtWidgets>
+#include <QOpenGLWidget>
+#include <QOpenGLFunctions>
 
-class QGLView : public QOpenGLWidget
+class QGLView : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 public:
@@ -17,6 +18,7 @@ protected:
     void initializeGL();
     void paintGL();
     void resizeGL(int width, int height);
+    void graphicAxes();
 
 signals:
 
